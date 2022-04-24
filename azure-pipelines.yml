@@ -1,0 +1,29 @@
+trigger:
+- master
+
+pool:
+  vmImage: 'ubuntu-latest'
+
+steps:
+
+- task: DotNetCoreCLI@2
+  displayName: 'Building nuget package'
+  inputs:
+    command: 'build'
+    projects: '**/Shakermaker.SqlServer'
+    arguments: '--configuration Release'
+
+- task: CopyFiles@2
+  displayName: 'Copying nuget package to artifacts'
+  inputs:
+    Contents: '*.nupkg'
+    SourceFolder: 'Shakermaker.SqlServer/bin/Release'
+    TargetFolder: '$(Build.ArtifactStagingDirectory)'
+
+- task: NuGetCommand@2
+  displayName: 'Pushing nuget package from artifacts'
+  inputs:
+    command: 'push'
+    packagesToPush: '$(Build.ArtifactStagingDirectory)/**/*.nupkg;!$(Build.ArtifactStagingDirectory)/**/*.symbols.nupkg'
+    nuGetFeedType: 'external'
+    publishFeedCredentials: 'nekk29 - Columbia'
