@@ -2,6 +2,11 @@
 {
     public class Constants
     {
+        public class Application
+        {
+            public const string MainApplication = "Main";
+        }
+
         public class Schema
         {
             public const string MainSchema = "sci";

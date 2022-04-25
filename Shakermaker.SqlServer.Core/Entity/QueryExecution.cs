@@ -13,6 +13,7 @@ namespace Shakermaker.SqlServer.Core.Entity
 
         [Key]
         public Guid QueryExecutionId { get; set; }
+        public string Application { get; set; }
         public string Release { get; set; }
         public string Environment { get; set; }
         public string Result { get; set; }

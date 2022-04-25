@@ -96,6 +96,7 @@ namespace Shakermaker.SqlServer.Core
 
             var queryExecution = new QueryExecution
             {
+                Application = string.IsNullOrEmpty(options.Application) ? Constants.Application.MainApplication : options.Application,
                 Release = options.Release,
                 Environment = options.Environment,
                 Result = Constants.Result.QueryExecution.Created,

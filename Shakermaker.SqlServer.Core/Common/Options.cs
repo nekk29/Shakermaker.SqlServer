@@ -4,7 +4,10 @@ namespace Shakermaker.SqlServer.Core.Common
 {
     public class Options
     {
-        [Option('r', "release", Required = true, HelpText = "The release identifier for the CI/CD deployment.")]
+        [Option('a', "application", Required = false, HelpText = "The application identifier for the deployment, empty parameter is taken as \"Main\".")]
+        public string Application { get; set; }
+
+        [Option('r', "release", Required = true, HelpText = "The release identifier for the deployment.")]
         public string Release { get; set; }
 
         [Option('e', "environment", Required = true, HelpText = "Deployment environment or stage e.g. dev | qa | prod.")]

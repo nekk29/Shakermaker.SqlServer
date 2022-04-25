@@ -19,6 +19,7 @@ namespace Shakermaker.SqlServer.Core.CommandQueryRunner
             $@"
                 CREATE TABLE [{Constants.Schema.MainSchema}].[{Constants.Table.QueryExecution}] (
                   [QueryExecutionId] uniqueidentifier NOT NULL,
+                  [Application] varchar(255) NOT NULL,
                   [Release] varchar(255) NOT NULL,
                   [Environment] varchar(255) NOT NULL,
                   [Result] varchar(1000) NOT NULL,
