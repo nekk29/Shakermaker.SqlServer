@@ -53,9 +53,6 @@ namespace Shakermaker.SqlServer.Core.Base
                 if (CheckPreviousExecution)
                 {
                     var queryFileHistoryExisting = await queryFileHistoryRepository.GetByAsync(x =>
-                        x.QueryExecution.Application == _queryExecution.Application &&
-                        x.QueryExecution.Release == _queryExecution.Release &&
-                        x.QueryExecution.Environment == _queryExecution.Environment &&
                         x.QueryType == queryType &&
                         x.FileName == fileInfo.Name
                     );

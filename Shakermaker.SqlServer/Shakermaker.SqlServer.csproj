@@ -7,7 +7,7 @@
     <TargetFramework>netcoreapp3.1</TargetFramework>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     <TargetsForTfmSpecificBuildOutput>$(TargetsForTfmSpecificBuildOutput);CopyProjectReferencesToPackage</TargetsForTfmSpecificBuildOutput>
-    <Version>1.0.1</Version>
+    <Version>1.0.2</Version>
     <Authors>Eleven Technologies</Authors>
     <Product>Shakermaker.SqlServer</Product>
     <Description>Continuous Integration Tool for SQL Server</Description>
