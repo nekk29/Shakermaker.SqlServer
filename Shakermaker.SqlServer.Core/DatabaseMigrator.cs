@@ -149,7 +149,7 @@ namespace Shakermaker.SqlServer.Core
                 Logger.Log($"Executing changes for data fixes section");
                 await new DataFixesDirectoryQueryRunner(databaseContext, queryExecution, options.SourceDirectory).Execute();
 
-                Logger.Log($"Executing changes for settings per environment data section");
+                Logger.Log($"Executing changes for data settings section");
                 await new DataSettingsDirectoryQueryRunner(databaseContext, queryExecution, options.SourceDirectory, options.Environment).Execute();
 
                 Logger.Log($"Executing changes for data per environment section");
