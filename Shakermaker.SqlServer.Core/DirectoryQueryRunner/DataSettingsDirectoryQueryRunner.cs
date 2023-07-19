@@ -7,9 +7,9 @@ namespace Shakermaker.SqlServer.Core.DirectoryQueryRunner
 {
     public class DataSettingsDirectoryQueryRunner : BaseDirectoryQueryRunner
     {
-        public DataSettingsDirectoryQueryRunner(DatabaseContext databaseContext, QueryExecution queryExecution, string sourceDirectory, string environmentPrefixFilter) : base(databaseContext, queryExecution, sourceDirectory)
+        public DataSettingsDirectoryQueryRunner(DatabaseContext databaseContext, QueryExecution queryExecution, string sourceDirectory) : base(databaseContext, queryExecution, sourceDirectory)
         {
-            EnvironmentPrefixFilter = environmentPrefixFilter;
+
         }
 
         protected override string QueriesDirectory => Constants.QueryDirectory.Data_Settings;
