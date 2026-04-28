@@ -49,6 +49,7 @@ namespace Shakermaker.SqlServer.Core
 
             Logger.Log($"DataSource: {databaseContextConnection.DataSource}");
             Logger.Log($"Database: {databaseContextConnection.Database}");
+            Logger.Log($"SourceDirectory: {options.SourceDirectory}");
 
             Logger.LogInfo($"Initializing database objects for continuous integration");
 
@@ -125,8 +126,6 @@ namespace Shakermaker.SqlServer.Core
 
             try
             {
-                Logger.Log($"Executing changes in directory '{options.SourceDirectory}'");
-
                 Logger.Log($"Executing changes for sequences section");
                 await new SchemaSequencesDirectoryQueryRunner(databaseContext, queryExecution, options.SourceDirectory).Execute();
 

@@ -8,7 +8,7 @@
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     <TargetsForTfmSpecificBuildOutput>
       $(TargetsForTfmSpecificBuildOutput);CopyProjectReferencesToPackage</TargetsForTfmSpecificBuildOutput>
-    <Version>1.0.7</Version>
+    <Version>1.0.8</Version>
     <Authors>Eleven Technologies</Authors>
     <Product>Shakermaker.SqlServer</Product>
     <Description>Continuous Integration Tool for SQL Server</Description>
