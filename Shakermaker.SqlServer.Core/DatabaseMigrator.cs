@@ -125,6 +125,8 @@ namespace Shakermaker.SqlServer.Core
 
             try
             {
+                Logger.Log($"Executing changes in directory '{options.SourceDirectory}'");
+
                 Logger.Log($"Executing changes for sequences section");
                 await new SchemaSequencesDirectoryQueryRunner(databaseContext, queryExecution, options.SourceDirectory).Execute();
 
